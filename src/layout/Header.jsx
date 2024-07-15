@@ -10,9 +10,24 @@ const Header = () => {
 					</h2>
 
 					<div className="flex gap-4">
-						<IconComponent iconName="GithubIcon" />
-						<IconComponent iconName="LinkedinIcon" />
-						<IconComponent iconName="SendIcon" />
+						<a
+							className="border-2 border-[#535281] rounded-md p-2 flex items-center justify-center"
+							href=""
+						>
+							<IconComponent iconName="GithubIcon" />
+						</a>
+						<a
+							href=""
+							className="border-2 border-[#535281] rounded-md p-2 flex items-center justify-center"
+						>
+							<IconComponent iconName="LinkedinIcon" />
+						</a>
+						<a
+							href="#"
+							className="border-2 border-[#535281] rounded-md p-2 flex items-center justify-center"
+						>
+							<IconComponent iconName="SendIcon" />
+						</a>
 					</div>
 				</div>
 			</header>

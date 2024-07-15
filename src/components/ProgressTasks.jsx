@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import IconComponent from "../components/IconComponent";
+import { motion } from "framer-motion";
 
-const ProgressTasks = ({ totalTasks }) => {
+const ProgressTasks = ({ totalTasks = 0 }) => {
 	const [qtyTask, setQtyTask] = useState(totalTasks);
 
 	useEffect(() => {
@@ -14,26 +15,18 @@ const ProgressTasks = ({ totalTasks }) => {
 
 	return (
 		<>
-			<section className="progress mb-24">
+			<section className="">
 				<div className="header-section flex items-center gap-4">
-					<IconComponent iconName="ProgressIcon" />
+					<span className="border-2 border-[#535281] rounded-md p-2 flex items-center justify-center">
+						<IconComponent iconName="ProgressIcon" />
+					</span>
 					<h2 className="text-3xl">Progresso</h2>
 				</div>
 				<span className="text-xl font-semibold mt-4 block">
 					Progress:{" "}
 					<span className="text-green-500 font-bold">
-						{result.toFixed(0)} %
+						{result.toFixed(0) >= 0 ? result.toFixed(0) : "0"} %
 					</span>
-					{result === 100 ? (
-						<div className="congrats-messagge animate-bounce flex items-center gap-2 bg-[rgba(64,251,114,0.2)] absolute -top-[13%] rounded-lg py-2 px-4 border border-green-500">
-							{`Felicidades completaste el ${result.toFixed(0)}%`}
-							<div className="icon">
-								<IconComponent iconName="TrophieIcon" />
-							</div>
-						</div>
-					) : (
-						""
-					)}
 				</span>
 				<div className="w-full bg-gray-200 rounded-full h-1 dark:bg-gray-700 mt-2">
 					<div
@@ -41,6 +34,22 @@ const ProgressTasks = ({ totalTasks }) => {
 						style={{ width: `${result}%` }}
 					></div>
 				</div>
+
+				{result === 100 ? (
+					<motion.div
+						initial={{ x: -100, opacity: 0 }}
+						animate={{ x: 0, opacity: 1 }}
+						exit={{ x: -100, opacity: 0 }}
+						className="congrats-messagge font-bold text-2xl flex items-center gap-2 bg-[rgba(64,251,114,0.2)] absolute bottom-6 rounded-lg mt-12 py-2  px-4 border border-green-500"
+					>
+						{`Felicidades completaste el ${result.toFixed(0)}%`}
+						<div className="icon">
+							<IconComponent iconName="TrophieIcon" />
+						</div>
+					</motion.div>
+				) : (
+					""
+				)}
 			</section>
 		</>
 	);

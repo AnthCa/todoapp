@@ -1,13 +1,17 @@
 import IconComponent from "../components/IconComponent";
+import { motion } from "framer-motion";
 
 const Task = ({ name, id, completed, deleteTask, taskDone }) => {
 	return (
 		<>
-			<li
+			<motion.li
+				initial={{ opacity: 0 }}
+				animate={{ opacity: 1 }}
+				exit={{ opacity: 0 }}
 				className={`${
 					completed == true
-						? "bg-[rgba(64,251,114,0.1)] border-2 border-green-700"
-						: "bg-[#242338]"
+						? "bg-[rgba(64,251,114,0.06)] border-2 border-green-700"
+						: "bg-[#242338] border-2 border-[#565488]"
 				} p-4 rounded-lg flex gap-2 items-center justify-between`}
 			>
 				<div className="task flex items-center gap-2">
@@ -25,7 +29,7 @@ const Task = ({ name, id, completed, deleteTask, taskDone }) => {
 				<button onClick={() => deleteTask(id)}>
 					<IconComponent iconName="TrashIcon" />
 				</button>
-			</li>
+			</motion.li>
 		</>
 	);
 };
