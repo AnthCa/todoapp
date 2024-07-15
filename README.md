@@ -1,8 +1,23 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Todo App
 
-Currently, two official plugins are available:
+This is my first attempt to react, and I'm starting with basic project to learn fundamentals at React such as useState, useEffect, props and other related concepts.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Challenge
+
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
+- Add new todos to the list
+- Mark todos as complete
+- Delete todos from the list
+- Toggle light and dark mode
+- Message ui when you complete all tasks
+
+
+## Screenshots
+
+![695shots_so](https://github.com/user-attachments/assets/bdb7723d-84e1-48ec-9289-4e71e5ee7dc0)
+
+## Authors
+
+- Linkedin - [Anthony](https://www.linkedin.com/in/anthony-canales-ampuero-157928114/)
